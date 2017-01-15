@@ -1,145 +1,544 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Classy</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  </head>
-  <body>
-  <a name="Ancla" id="a"></a>
-    <nav class="navbar navbar-inverse" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse"
-            data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Desplegar navegación</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="">
-      <img style="max-width:55px; margin-top: -10px;"
-                 src="http://a4.files.theultralinx.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTI5MDI0MjQzMzQ1MTY4ODYy.jpg">
-    </a>
-  </div>
+<head>
+  <title>Curriculum Vitae</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+  }
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }
+  .jumbotron {
+      background-color: #f4511e;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+  .logo-small {
+      color: #f4511e;
+      font-size: 50px;
+  }
+  .logo {
+      color: #f4511e;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #f4511e;
+  }
+  .carousel-indicators li {
+      border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+      background-color: #f4511e;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid #f4511e;
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #f4511e;
+      background-color: #fff !important;
+      color: #f4511e;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #f4511e !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #f4511e;
+      color: #fff;
+  }
+  .navbar {
+      margin-bottom: 0;
+      background-color: #f4511e;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #f4511e !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #f4511e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="Classy.html">HOME</a></li>
-      <li><a href="Suscribe.html">SUSCRIBE</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          FOTOS <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="#Anclab">Arriba</a></li>
-          <li class="divider"></li>
-          <li><a href="#Anclac">Medio</a></li>
-          <li class="divider"></li>
-          <li><a href="#Anclad">Abajo</a></li>
-        </ul>
-      </li>
-    </ul>
-    <form class="navbar-form navbar-left" role="search">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Buscar">
-      </div>
-      <button type="submit" class="btn btn-default">BUSCAR</button>
-    </form>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#myPage">Curriculum</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">INFORMACIÓN</a></li>
+        <li><a href="#services">FORMACIÓN</a></li>
+        <li><a href="#portfolio">EXPERIENCIA</a></li>
+        <li><a href="#pricing">HABILIDADES</a></li>
+        <li><a href="#contact">CONTACTO</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-4 col-sm-4" style="background-color:;border-style: solid;
-        border-color:#FFFFFF"> <br/><br/><br/></div>
-<div class="col-lg-4" style="">  <img src="http://static.tumblr.com/e66527a3d1044a2ad879e50d3959ceac/mciwg7n/6Zxoarx7i/tumblr_static_e2p74q8tzhkoksckos08c08s8.jpg" alt="..." class="img-thumbnail" width="500" ><br/><br/></div>
-<div class="col-lg-4 col-sm-4" style="background-color:;border-style: solid;
-border-color:#FFFFFF"> <br/><br/><br/></div>
+
+<div class="jumbotron text-center">
+  <h1>DAVID CARABEL MARTÍN</h1>
+  <p>DEVELOPER</p>
+  <img src="david.jpg" alt="david" class="img-circle">
+
 </div>
-<br/>
+
+
+<div id="about" class="container-fluid">
   <div class="row">
-    <div class="col-lg-4 col-sm-6" style="background-color:;border-style: solid;
-    border-color:#FFFFFF"> <br/><br/><br/></div>
+    <div class="col-sm-8">
+      <h2>INfORMACIÓN</h2><br>
+      <h3>Nombre y Apellidos : David Carabel Martín <br>
 
-    <div class="col-lg-4 col-sm-6" style="background-color:;border-style:solid;
-    border-color:#FFFFFF">
-    <p>
-      <a href="https://www.twitter.com" class="btn btn-social-icon btn-twitter">
-    <span class="fa fa-twitter"></span>
-    </a>
-    <a href="https://www.facebook.com" class="btn btn-social-icon btn-facebook">
-  <span class="fa fa-facebook"></span>
-  </a>
-  <a href="https://www.instagram.com" class="btn btn-social-icon btn-instagram">
-<span class="fa fa-instagram"></span>
-</a>
-<a href="https://www.google.com" class="btn btn-social-icon btn-google">
-<span class="fa fa-google-plus-square"></span>
-</a>
-    </p>
 
-    <br/><br/><a name="Anclab" id="b"></a>
-    <img src="http://66.media.tumblr.com/f7d5518ed8487036ced8ab398fd5be43/tumblr_oemw7lkXfd1rms5soo1_1280.gif" alt="imagen1" class="img-responsive"  width="460" height="345">
-    <br/><br/>
-    <img src="http://galima-hr.ru/wp-content/uploads/2015/04/AqcJW3aymiQ.jpg" alt="imagen2" class="img-responsive"  width="460" height="345">
-    <br/><br/>
-    <img src="http://36.media.tumblr.com/946defb4fbc1e9e0145c681afd7b09ef/tumblr_ms1jur74VV1qbj34ao1_1280.jpg" alt="imagen3" class="img-responsive"  width="460" height="345">
-    <br/><br/>
-    <img src="http://65.media.tumblr.com/d63156bce94116374cb11378bf1ede1d/tumblr_nd19emF6lY1rky2kko1_1280.jpg" alt="imagen4" class="img-responsive"  width="460" height="345">
-    <br/><br/><a name="Anclac" id="c"></a>
-    <img src="http://66.media.tumblr.com/e91246f14bb01fac230aa99cdb2249cf/tumblr_mr0pq1verX1se7aqyo1_r1_1280.jpg" alt="imagen5" class="img-responsive"  width="460" height="345">
-    <br/><br/>
-    <img src="http://67.media.tumblr.com/5c5c910bbcdac55f2dc6418d49057095/tumblr_mvjnnpCiXG1r5s8dro1_1280.jpg" alt="imagen6" class="img-responsive"  width="460" height="345">
-    <br/><br/>
-    <img src="http://66.media.tumblr.com/44076b6e4a53d14941356ea88dc879fb/tumblr_nc16mt8ZeJ1ruhifjo1_540.jpg" alt="imagen6" class="img-responsive"  width="460" height="345">
-    <br/><br/><a name="Anclad" id="d"></a>
-    <img src="https://s-media-cache-ak0.pinimg.com/564x/a7/8d/b6/a78db62cafcfc2648b5702fd12ad4827.jpg" alt="imagen7" class="img-responsive"  width="460" height="345">
-     <br/><br/><br/></div>
-    <div class="col-lg-4 col-sm-12" style="background-color:;border-style:solid;
-    border-color:#FFFFFF">
-    <br/><br/>
 
-     <br/><br/><br/></div>
+          <br>Lugar y Fecha de Nacimiento : 12 de Noviembre de 1993 - Bergondo (A Coruña)<br>
+        <br>  D.N.I : 53937394-W <br>
+          <br><span class="glyphicon glyphicon-map-marker"></span> Dirección : C/Sagunto, nº 4,Urbanización el Pinar - 28230 Las Rozas (Madrid) <br>
+          <br><span class="glyphicon glyphicon-phone"></span> Teléfono : 638854205 - 916319504 <br>
+        <br><span class="glyphicon glyphicon-envelope"></span>  Email: davidcarabel@gmail.com</h3><br>
     </div>
-    <br/>
-    <div class="row">
-      <div class="col-lg-6" style="background-color:;border-style:solid;
-      border-color:#FFFFFF">
-      <button type="button" class="btn btn-default">
-          <span class="glyphicon glyphicon-chevron-up"></span>
-          <a href="#Ancla">  <img src="http://66.media.tumblr.com/avatar_983101ac2550_128.png" alt="imagen7" class="img-responsive" width="100"></a>
-        </button>
-      <br/><br/></div>
-  <div class="row">
-    <div class="col-lg-6" style="background-color:;border-style:solid;
-    border-color:#FFFFFF">
-    <button type="button" class="btn btn-default">
-    <span class="glyphicon glyphicon-registration-mark"></span>MARCA REGISTRADA
-    <button type="button" class="btn btn-default">
-    <span class="glyphicon glyphicon-copyright-mark"></span>COPYRIGHT
-    </button>
-    <button type="button" class="btn btn-default">
-    <span class="glyphicon glyphicon-ok-sign"></span>David Carabel
-    </button>
-  </button>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-signal logo"></span>
+    </div>
+  </div>
 </div>
 
-    <br/><br/></div>
-</div>
-</div>
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>FORMACIÓN</h2><br>
+      <h4><strong>Estudios:</strong>
+        1995 – 2010 :
+ Colegio Punta Galea,Las Rozas (Madrid)-
+Secondary Diploma Program.
+</h4>
+      <p>  <h4><strong>Grado Medio:</strong>
+        2011 – 2013 :
+ Cenec
+Sistemas Microinformaticos y Redes, System, Networking, and LAN/WAN Management/Manager.
+</h4></p>
+<p><h4><strong>Grado Superior:</strong>
+  2014 – 2017 :
+ U-tad , Centro Universitario de Tecnología y Arte Digital -
+Técnico superior en Desarrollo de Aplicaciones Multiplataforma.
+</h4></p>
+<p><h4><strong>Técnico Deportivo:</strong>
+  2013 – 2014 :
+C.E.F.E.M , Centro de Formación Madrileño de Técnicos Deportivos -
+Técnico Deportivo de nivel II de Esquí Alpino.
+</h4></p>
+    </div>
   </div>
-    <ul class="pagination pagination-lg">
-  <li><a href="Classy2.html">&laquo;</a></li>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="Classy1.html">1</a></li>
-  <li><a href="Classy2.html">2</a></li>
-  <li><a href="Classy1.html">&raquo;</a></li>
-</ul>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  </body>
+</div>
+
+
+<div id="services" class="container-fluid text-center">
+  <h2>EXPERIENCIA</h2>
+  <h4>Conocimiento y Aprendizaje.</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-off logo-small"></span>
+      <h4>HTML 5</h4>
+      <p>HTML5 (HyperText Markup Language, versión 5) es la quinta revisión importante del lenguaje básico de la World Wide Web.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <h4>CSS</h4>
+      <p>Hojas de estilo en cascada (o CSS, siglas en inglés de Cascading Stylesheets) es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado .</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock logo-small"></span>
+      <h4>JAVASCRIPT</h4>
+      <p>JavaScript (abreviado comúnmente JS) es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico.</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-leaf logo-small"></span>
+      <h4>MYSQL</h4>
+      <p>MySQL es un sistema de gestión de bases de datos relacional desarrollado bajo licencia dual GPL/Licencia comercial por Oracle Corporation y está considerada como la base datos open source más popular del mundo.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h4>PHP</h4>
+      <p>PHP es un lenguaje de programación de uso general de código del lado del servidor originalmente diseñado para el desarrollo web de contenido dinámico.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench logo-small"></span>
+      <h4 style="color:#303030;">XML</h4>
+      <p>XML, siglas en inglés de eXtensible Markup Language, traducido como "Lenguaje de Marcado Extensible" o "Lenguaje de Marcas Extensible", es un meta-lenguaje que permite definir lenguajes de marcas desarrollado por el World Wide Web Consortium (W3C) utilizado para almacenar datos en forma legible. </p>
+    </div>
+  </div>
+</div>
+
+
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>HABILIDADES</h2><br>
+  <h4>MANEJO Y UTILIZACIÓN DE DIFERENTES TECNOLOGÍAS</h4>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://pbs.twimg.com/profile_images/616076655547682816/6gMRtQyY.jpg" alt="Paris" width="400" height="300">
+        <p><strong>Android</strong></p>
+        <p>Android es un sistema operativo basado en el núcleo Linux. Fue diseñado principalmente para dispositivos móviles con pantalla táctil, como teléfonos inteligentes, tablets o tabléfonos; y también para relojes inteligentes, televisores y automóviles.</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="http://deflydrone.com/images/Java.png" alt="New York" width="400" height="300">
+        <p><strong>Java</strong></p>
+        <p>Java es un lenguaje de programación de propósito general, concurrente, orientado a objetos que fue diseñado específicamente para tener tan pocas dependencias de implementación como fuera posible.</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="http://www.slstutorials.com/images/untouched/Bootstrap.png" alt="San Francisco" width="400" height="300">
+        <p><strong>Bootstrap</strong></p>
+        <p>Twitter Bootstrap es un framework o conjunto de herramientas de Código abierto para diseño de sitios y aplicaciones web. Contiene plantillas de diseño con tipografia y otros elementos de diseño basado en HTML y CSS.</p>
+      </div>
+    </div>
+  </div><br>
+
+  <h2>PRÁCTICAS Y FORMACIÓN EN EMPRESAS</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>Tres meses de formación en grupo HM Hospitales<br><span style="font-style:normal;">Trabajando como Técnico Informatico en el hospital de Torrelodones.</span></h4>
+      </div>
+      <div class="item">
+        <h4>Dos Meses de formación como tecnico especialista<br><span style="font-style:normal;">En Bankia,Las Rozas.</span></h4>
+      </div>
+      <div class="item">
+        <h4>En Navidades y Semana Santa trabajo como Técnico Deportivo<br><span style="font-style:normal;">En la Escuela Española de Esquí de Cerler.</span></h4>
+      </div>
+    </div>
+
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+
+<div id="pricing" class="container-fluid">
+  <div class="text-center">
+    <h2>Skills</h2>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Idiomas</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>Inglés :</strong>Nivel Alto.</p>
+          <p><strong>Frances :</strong>Nivel Internmedio.</p>
+
+        </div>
+        <div class="panel-footer">
+        <p><strong>Cambridge </strong> English: First (FCE)</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Cursos</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>CCNA</strong>Cisco E-Learning for CCNA Routing and Switching </p>
+          <p><strong>Cisco</strong>Implementing Cisco Network Security</p>
+
+        </div>
+        <div class="panel-footer">
+        <p><strong>Udemy</strong>The Complete Java Developer Course. Learn Step by Step</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Otros</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>  Carné de conducir B y A-1 </strong> - Vehículo propio</p>
+          <p><strong>Disponibilidad horaria y geográfica</strong></p>
+
+
+        </div>
+        <div class="panel-footer">
+          <p><strong>REFERENCIAS</strong> - Les podré ofrecer las que consideren oportunas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACTO</h2>
+  <div class="row">
+    <div class="col-sm-3">
+
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="googleMap" style="height:400px;width:100%;"></div>
+
+<!-- Add Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+var myCenter = new google.maps.LatLng(40.535342, -3.903753);
+
+function initialize() {
+var mapProp = {
+  center:myCenter,
+  zoom:12,
+  scrollwheel:true,
+  draggable:true,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Página desarrollada por : David Carabel Martin<a href="https://davidcarabel.github.io/" title="Pagina Web">  Pagina Web </a></p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+<script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDgq5mGfR9z-reLM4nEe0B_wDfZAzMQbSE",
+    authDomain: "curriculum-bcda9.firebaseapp.com",
+    databaseURL: "https://curriculum-bcda9.firebaseio.com",
+    storageBucket: "curriculum-bcda9.appspot.com",
+    messagingSenderId: "349782391791"
+  };
+  firebase.initializeApp(config);
+</script>
+</body>
 </html>
